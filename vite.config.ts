@@ -4,6 +4,17 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
+  build: {
+    cssCodeSplit: false,
+    rollupOptions: {
+      output: {
+        entryFileNames: "nrg-checkout-app.js",
+        chunkFileNames: "nrg-checkout-app.js",
+        assetFileNames: "nrg-checkout-app.css",
+        manualChunks: () => null,
+      },
+    },
+  },
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
