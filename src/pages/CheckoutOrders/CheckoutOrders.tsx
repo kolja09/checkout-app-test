@@ -1,7 +1,6 @@
 import { Header } from "@/components/shared";
 
 import styles from "./CheckoutOrders.module.css";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setBrand } from "@/store/slices/brand/brand.slice";
 import { RootState } from "@/store/store";
@@ -48,9 +47,6 @@ export const CheckoutOrders = () => {
         </div>
       </div>
       <div className={styles.rightWrapper}>
-        <Link to="/payment-success">Payment success</Link>
-        <Link to="/order-tracking">Order Tracking</Link>
-        <Link to="/order-tracking-form">Order tracking form</Link>
         <button onClick={handleSetBrand}>Set Brand Data</button>
       </div>
       <div>
