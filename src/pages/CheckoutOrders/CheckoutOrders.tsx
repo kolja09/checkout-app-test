@@ -1,4 +1,5 @@
 import { Header } from "@/components/shared";
+import { Link } from "react-router-dom";
 
 import styles from "./CheckoutOrders.module.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -44,6 +45,9 @@ export const CheckoutOrders = () => {
         <Header />
         <div className={styles.tabs}>
           {/* <TabNavigation tabOptions={tabOptions} activeTab={activeTab} /> */}
+          <Link to="/payment-success">Payment success</Link>
+          <Link to="/order-tracking">Order Tracking</Link>
+          <Link to="/order-tracking-form">Order tracking form</Link>
         </div>
       </div>
       <div className={styles.rightWrapper}>
