@@ -1,0 +1,38 @@
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox {
+  display: none;
+}
+
+.customCheckbox {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  border: 1px solid #d5dbe1;
+  border-radius: 4px;
+  background-color: white;
+  position: relative;
+}
+
+.customCheckbox::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 4px;
+  width: 6px;
+  height: 10px;
+  border: solid #3c4257;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+
+.checkbox:checked + .customCheckbox::after {
+  opacity: 1;
+}

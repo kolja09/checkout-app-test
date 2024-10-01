@@ -1,0 +1,36 @@
+.required {
+  color: FF3B30;
+  margin-left: 4px;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  color: #666;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.button img {
+  margin-right: 10px;
+}
+
+.button.active {
+  background-color: #3c4257;
+  color: white;
+  border-color: #3c4257;
+}
+
+.button:hover {
+  border-color: #3c4257;
+}

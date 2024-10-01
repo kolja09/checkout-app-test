@@ -1,0 +1,50 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoSection {
+  position: relative;
+}
+
+.goBack {
+  position: absolute;
+  left: -28px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  cursor: pointer;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoText {
+  font-weight: bold;
+}
+
+.couponSection {
+  border-radius: 6px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px;
+
+  background-color: #f6f8fb;
+}
+
+.text {
+  color: var(--theme-color);
+}
+
+.textForAction {
+  color: #635bff;
+  cursor: pointer;
+  text-decoration: underline;
+}
