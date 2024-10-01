@@ -4,26 +4,6 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  build: {
-    lib: {
-      entry: "src/main.tsx",
-      name: "MyNrgCheckoutApp",
-      fileName: () => `nrg-checkout-app.js`,
-      formats: ["umd"],
-    },
-    cssCodeSplit: false,
-    rollupOptions: {
-      output: {
-        exports: "named", // Добавлено для корректной обработки именованных экспортов
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name === "style.css") {
-            return "nrg-checkout-app.css";
-          }
-          return assetInfo.name || "nrg-checkout-app-[name][extname]";
-        },
-      },
-    },
-  },
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),

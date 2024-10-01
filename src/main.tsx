@@ -7,28 +7,16 @@ import { persistor, store } from "./store/store";
 import "./index.css";
 import App from "./App";
 
-/**
- * Функция для инициализации приложения.
- * @param rootId - ID элемента, в который будет рендериться приложение.
- */
-export function loadSignIn(rootId: string) {
-  const rootElement = document.getElementById(rootId);
-
-  if (!rootElement) {
-    console.error(`Элемент с id "${rootId}" не найден.`);
-    return;
-  }
-
-  ReactDOM.createRoot(rootElement).render(
+window.loadSignIn = (rootId: string) => {
+  ReactDOM.createRoot(document.getElementById(rootId) as HTMLElement).render(
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <App />
       </PersistGate>
     </Provider>
   );
-}
+};
 
-// Автоматическая инициализация в режиме разработки
-if (import.meta.env.DEV) {
-  loadSignIn("root");
+if (process.env.NODE_ENV !== "production") {
+  window.loadSignIn("root");
 }
