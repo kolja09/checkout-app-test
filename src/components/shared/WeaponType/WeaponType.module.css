@@ -1,0 +1,55 @@
+.container {
+  padding: 32px 0 150px 0;
+}
+
+.selectWrapper {
+  max-width: 300px;
+  width: 100%;
+}
+
+.label {
+  margin-top: 34px;
+  display: block;
+  font-weight: bold;
+}
+
+.required {
+  color: #ff3b30;
+  margin-left: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16.9px;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  margin-top: 12px;
+}
+
+.item {
+  max-width: 300px;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 1080px) {
+  .item,
+  .selectWrapper {
+    max-width: 100%;
+    width: 100%;
+  }
+  .container {
+    padding: 32px 0 40px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px 0 30px 0;
+  }
+}

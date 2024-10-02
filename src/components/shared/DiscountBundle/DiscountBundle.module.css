@@ -1,0 +1,26 @@
+.container {
+  padding: 32px 0;
+  border-bottom: 1px solid #3c42571f;
+  color: #1a1a1ae5;
+}
+
+.discountItem {
+  max-width: 300px;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 1080px) {
+  .discountItem {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px 0;
+  }
+}

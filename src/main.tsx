@@ -17,6 +17,4 @@ window.loadSignIn = (rootId: string) => {
   );
 };
 
-if (process.env.NODE_ENV !== "production") {
-  window.loadSignIn("root");
-}
+window.loadSignIn("root");

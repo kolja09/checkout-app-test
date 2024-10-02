@@ -1,6 +1,9 @@
 import { useState } from "react";
-import styles from "./PlatformSelector.module.css";
+
 import { GameIcon } from "@/components/ui/Icons/GameIcon";
+import { Title } from "@/components/ui";
+
+import styles from "./PlatformSelector.module.css";
 
 export const PlatformSelector = () => {
   const [selectedPlatform, setSelectedPlatform] = useState<string>("PS4/5");
@@ -17,10 +20,7 @@ export const PlatformSelector = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.title}>
-        <h4>Choose Platform</h4>
-        <span className={styles.required}>*</span>
-      </div>
+      <Title isRequired>Choose Platform</Title>
       <div className={styles.buttonGroup}>
         {options.map((el) => (
           <div
@@ -30,8 +30,10 @@ export const PlatformSelector = () => {
             }`}
             onClick={() => handleSelect(el.value)}
           >
-            <GameIcon />
-            PS4/5
+            <GameIcon
+              color={selectedPlatform === el.value ? "#ffffff" : "#3C4257"}
+            />
+            <span>{el.name}</span>
           </div>
         ))}
       </div>

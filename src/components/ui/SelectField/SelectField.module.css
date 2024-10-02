@@ -1,5 +1,4 @@
 .selectField {
-  margin-bottom: 20px;
   position: relative;
 }
 
@@ -10,58 +9,103 @@
 }
 
 .required {
-  color: red;
+  color: #ff3b30;
+  margin-left: 4px;
+  margin-top: 2px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16.9px;
 }
 
 .selectWrapper {
+  box-shadow: 0px 2px 4px 0px #00000012;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+
+  height: 44.5px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 10px 12px;
   cursor: pointer;
+
+  transition: all 0.2s;
+}
+
+.selectWrapper:hover {
+  transition: all 0.2s;
+  border-color: #3c4257;
 }
 
 .errorBorder {
-  border-color: red;
+  border-color: #dc2727cc;
 }
 
 .selectedValue {
   flex: 1;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 23px;
+  text-align: left;
+
+  color: #1a1a1ae5;
 }
 
 .arrow {
   margin-left: 10px;
+  transition: transform 0.2s ease;
+}
+
+.arrowUp {
+  transform: rotate(180deg);
 }
 
 .optionsWrapper {
+  box-shadow: 0px 2px 4px 0px #00000012;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
   background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+
   z-index: 1000;
   max-height: 200px;
   overflow-y: auto;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .option {
-  padding: 8px;
+  padding: 10px 12px;
   cursor: pointer;
+}
+
+.option.active {
+  font-weight: bold;
+  color: #3c4257;
+  background-color: #f0f0f0;
+  cursor: default;
 }
 
 .option:hover {
   background-color: #f0f0f0;
 }
 
+.activeBorder {
+  border-color: #3c4257;
+  box-shadow: 0 0 6px rgba(60, 66, 87, 0.5);
+}
+
 .error {
-  color: red;
   font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.015em;
   margin-top: 5px;
+  color: #dc2727cc;
 }
 
 .overlay {

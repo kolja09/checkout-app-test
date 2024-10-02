@@ -5,14 +5,15 @@ import { getBrandThunk } from "./brand.thunk";
 
 const initialState: CategoriesStateType = {
   brand: null,
+  activeTab: 1,
 };
 
 const brandSlice = createSlice({
   name: "brand",
   initialState,
   reducers: {
-    setBrand(state, action: { payload: TBrandData }) {
-      state.brand = action.payload;
+    setActiveTab: (state, { payload }: { payload: number }) => {
+      state.activeTab = payload;
     },
   },
   extraReducers: (builder) => {
@@ -25,5 +26,6 @@ const brandSlice = createSlice({
   },
 });
 
-export const { setBrand } = brandSlice.actions;
+export const { setActiveTab } = brandSlice.actions;
+
 export default brandSlice.reducer;

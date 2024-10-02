@@ -21,6 +21,7 @@ interface SelectFieldProps {
   onChange: (value: string | number) => void;
   required?: boolean;
   errorMessage?: string;
+  className?: string;
 }
 
 export const SelectField: React.FC<SelectFieldProps> = ({
@@ -30,6 +31,7 @@ export const SelectField: React.FC<SelectFieldProps> = ({
   onChange,
   required = false,
   errorMessage = "",
+  className,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const selectRef = useRef<HTMLDivElement>(null);
@@ -52,16 +54,16 @@ export const SelectField: React.FC<SelectFieldProps> = ({
         {label} {required && <span className={styles.required}>*</span>}
       </label>
       <div
-        className={`${styles.selectWrapper} ${
-          errorMessage ? styles.errorBorder : ""
-        }`}
+        className={`${styles.selectWrapper} ${className} ${
+          isOpen ? styles.activeBorder : ""
+        } ${errorMessage ? styles.errorBorder : ""}`}
         onClick={handleToggle}
       >
         <div className={styles.selectedValue}>
           {options.find((option) => option.value === value)?.name ||
             "Select an option"}
         </div>
-        <div className={styles.arrow}>
+        <div className={`${styles.arrow} ${isOpen ? styles.arrowUp : ""}`}>
           <img src={arrowForSelect} alt="arrow" />
         </div>
       </div>
@@ -77,7 +79,9 @@ export const SelectField: React.FC<SelectFieldProps> = ({
                 {options.map((option) => (
                   <div
                     key={option.value}
-                    className={styles.option}
+                    className={`${styles.option} ${
+                      option.value === value ? styles.active : ""
+                    } `}
                     onClick={() => handleOptionClick(option.value)}
                   >
                     {option.name}
@@ -90,7 +94,9 @@ export const SelectField: React.FC<SelectFieldProps> = ({
               {options.map((option) => (
                 <div
                   key={option.value}
-                  className={styles.option}
+                  className={`${styles.option} ${
+                    option.value === value ? styles.active : ""
+                  } `}
                   onClick={() => handleOptionClick(option.value)}
                 >
                   {option.name}

@@ -1,0 +1,65 @@
+.wrapper {
+  padding: 48px 20px 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form {
+  width: 100%;
+  max-width: 580px;
+
+  box-shadow: 0px 1px 1px 0px #0000000a;
+  box-shadow: 0px 2px 5px 0px #00000014;
+  border: 1px solid #3c42571f;
+  border-radius: 12px;
+
+  padding: 32px;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.description {
+  margin-bottom: 32px;
+  color: #697386;
+  line-height: 22px;
+}
+
+.trackButton {
+  width: 100%;
+  padding: 12px;
+  background-color: #3c4257;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.trackButton:hover {
+  background-color: #2a2e3f;
+}
+
+.footerText {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #acacac;
+  text-align: center;
+  margin-top: 20px;
+}

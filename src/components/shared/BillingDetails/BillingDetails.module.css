@@ -1,0 +1,65 @@
+.fullNameContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.formContainer {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.inputGroup {
+  display: flex;
+  justify-content: space-between;
+}
+
+.selectField {
+  height: 39px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom: 0.5px solid #e0e0e0;
+}
+
+.inputLeft,
+.inputRight {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-top: 0.5px solid #e0e0e0;
+}
+
+.inputRight {
+  border-bottom-left-radius: 0;
+  border-left: 0.5px solid #e0e0e0;
+}
+
+.inputLeft {
+  border-bottom-right-radius: 0;
+  border-right: 0.5px solid #e0e0e0;
+}
+
+@media (max-width: 600px) {
+  .fullNameContainer {
+    flex-direction: column;
+  }
+
+  .inputRight {
+    border-bottom-left-radius: 6px;
+    border-left: 1px solid #e0e0e0;
+  }
+
+  .inputLeft {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-right: 1px solid #e0e0e0;
+  }
+
+  .inputGroup {
+    flex-direction: column;
+  }
+
+  .formContainer {
+    margin-bottom: 20px;
+  }
+}

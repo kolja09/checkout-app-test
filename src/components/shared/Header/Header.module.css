@@ -2,10 +2,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 44px;
+  width: 100%;
 }
 
 .logoSection {
   position: relative;
+}
+
+.couponWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .goBack {
@@ -47,4 +55,37 @@
   color: #635bff;
   cursor: pointer;
   text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+  .goBack,
+  .logoSection {
+    position: static;
+  }
+
+  .logoSection {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .goBack {
+    transform: translateY(0%);
+  }
+}
+
+@media (max-width: 600px) {
+  .couponSection {
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    margin-bottom: 20px;
+    height: auto;
+  }
 }

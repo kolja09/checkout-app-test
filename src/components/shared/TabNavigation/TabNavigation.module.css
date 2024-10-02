@@ -22,6 +22,18 @@
   color: black;
   font-weight: 600;
   border-bottom: 2px solid #635bff;
+  cursor: default;
+}
+
+.tabItem.active:hover {
+  cursor: default;
+}
+
+.tabItem:hover {
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
 .tabItem.active::after {
@@ -36,4 +48,10 @@
 
 .tabItem.inactive {
   color: #b0b0b0;
+}
+
+@media (max-width: 500px) {
+  .tabContainer {
+    flex-direction: column;
+  }
 }

@@ -1,0 +1,148 @@
+.wrapper {
+  padding: 48px 20px 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  max-width: 580px;
+  width: 100%;
+}
+
+.successContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 48px;
+}
+
+.successImg {
+  margin-bottom: 32px;
+}
+
+.title {
+  color: #3c4257;
+  font-size: 36px;
+
+  font-weight: 600;
+  line-height: 44px;
+  letter-spacing: -0.02em;
+
+  margin-bottom: 8px;
+}
+
+.sutTitle {
+  color: #697386;
+}
+
+.generalData {
+  display: flex;
+  margin-bottom: 48px;
+  gap: 24px;
+}
+
+.generalDataItem {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.line {
+  width: 1px;
+  height: 51px;
+  background-color: #3c42571f;
+}
+
+.dataTitle {
+  font-weight: 500;
+  color: #697386;
+}
+
+.dataValue {
+  font-weight: 600;
+  color: #3c4257;
+}
+
+.tableHeader {
+  background-color: #f6f8fb;
+  border-bottom: 1px solid #3c42571f;
+  border-radius: 8px 8px 0 0;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 14px 16px;
+}
+
+.tableTitle {
+  color: #3c4257;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+}
+
+.tableContainer {
+  margin-top: 24px;
+  border: 1px solid #3c42571f;
+  border-radius: 8px;
+
+  box-shadow: 0px 1px 1px 0px #0000000a;
+  box-shadow: 0px 2px 5px 0px #00000014;
+}
+
+.orderTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.orderTable th,
+.orderTable td {
+  padding: 16px;
+  border-bottom: 1px solid #eaeaea;
+  font-weight: 600;
+  line-height: 16.9px;
+  text-align: left;
+  color: #697386;
+}
+
+.orderTable th:first-child,
+.orderTable td:first-child {
+  border-right: 1px solid #eaeaea;
+  width: 70%;
+}
+
+.orderTable th:last-child,
+.orderTable td:last-child {
+  width: 30%;
+}
+
+.orderTable td a {
+  color: #635bff;
+  text-decoration: underline;
+}
+
+.orderTable tr:last-child td {
+  border-bottom: none;
+}
+
+.textBold {
+  color: #3c4257 !important;
+  font-weight: 600;
+  line-height: 16.9px;
+}
+
+.footerText {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #acacac;
+  text-align: center;
+  margin-top: 50px;
+}

@@ -1,0 +1,18 @@
+.orderInformation {
+  margin-bottom: 32px;
+  padding: 0 0 32px 0;
+  border-bottom: 1px solid #3c42571f;
+}
+
+.passwordContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+@media (max-width: 600px) {
+  .passwordContainer {
+    flex-direction: column;
+  }
+}

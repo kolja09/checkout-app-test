@@ -17,8 +17,8 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #333;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  outline: none;
+  overflow-x: hidden;
 }
 
 body {

@@ -1,3 +1,9 @@
+export { PaymentMethods } from "./PaymentMethods/PaymentMethods";
+export { OrderInformation } from "./OrderInformation/OrderInformation";
+export { OrderSummary } from "./OrderSummary/OrderSummary";
 export { Header } from "./Header/Header";
 export { TabNavigation } from "./TabNavigation/TabNavigation";
 export { PlatformSelector } from "./PlatformSelector/PlatformSelector";
+export { DiscountBundle } from "./DiscountBundle/DiscountBundle";
+export { WeaponType } from "./WeaponType/WeaponType";
+export { BillingDetails } from "./BillingDetails/BillingDetails";

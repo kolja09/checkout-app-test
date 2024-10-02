@@ -1,5 +1,5 @@
 .inputField {
-  margin-bottom: 20px;
+  width: 100%;
 }
 
 .label {
@@ -9,23 +9,52 @@
 }
 
 .required {
-  color: red;
+  color: #ff3b30;
+  margin-left: 4px;
+  margin-top: 2px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16.9px;
 }
 
 .input {
   width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  height: 39px;
+  padding: 0 12px;
   font-size: 14px;
+  box-shadow: 0px 2px 4px 0px #00000012;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+
+  display: flex;
+  align-items: center;
+  outline: none;
+}
+
+.input:focus {
+  box-shadow: 0 0 6px rgba(60, 66, 87, 0.5);
+  transition: all 0.3s;
+}
+
+.input:hover,
+.input:focus {
+  transition: all 0.3s;
+  border: 1px solid #3c4257;
+}
+
+.input::placeholder {
+  color: #3c425780;
 }
 
 .errorInput {
-  border-color: red;
+  border-color: #dc2727cc;
 }
 
 .error {
-  color: red;
   font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.015em;
   margin-top: 5px;
+  color: #dc2727cc;
 }

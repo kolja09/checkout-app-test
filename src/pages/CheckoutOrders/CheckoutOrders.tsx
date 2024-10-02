@@ -1,62 +1,81 @@
-import { Header } from "@/components/shared";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { setActiveTab } from "@/store/slices/brand/brand.slice";
+
+import {
+  BillingDetails,
+  DiscountBundle,
+  Header,
+  OrderInformation,
+  OrderSummary,
+  PlatformSelector,
+  TabNavigation,
+  WeaponType,
+  PaymentMethods,
+} from "@/components/shared";
+import { Button } from "@/components/ui";
 
 import styles from "./CheckoutOrders.module.css";
-import { useDispatch, useSelector } from "react-redux";
-import { setBrand } from "@/store/slices/brand/brand.slice";
-import { RootState } from "@/store/store";
 
 export const CheckoutOrders = () => {
-  const dispatch = useDispatch();
-  const { brand } = useSelector((state: RootState) => state.brand);
+  const dispatch = useAppDispatch();
+  const { activeTab } = useAppSelector((state) => state.brand);
+  const navigate = useNavigate();
 
-  // Данные, которые будем сетить
-  const mockBrandData = {
-    id: 1,
-    name: "Test Brand",
-    description: "This is a test brand",
+  const handleSetActiveTab = () => {
+    if (activeTab === 1) {
+      dispatch(setActiveTab(2));
+    } else if (activeTab === 2) {
+      dispatch(setActiveTab(3));
+    } else {
+      navigate("/payment-success");
+    }
   };
-
-  const handleSetBrand = () => {
-    // Диспатчим action setBrand
-    dispatch(setBrand(mockBrandData));
-  };
-
-  // const [activeTab, setActiveTab] = useState(1);
-
-  // const tabOptions = [
-  //   {
-  //     name: "01 CUSTOMIZATION",
-  //     id: 1,
-  //   },
-  //   {
-  //     name: "02 ORDER INFO",
-  //     id: 2,
-  //   },
-  //   // {
-  //   //   name: "03 CHECKOUT",
-  //   //   id: 3,
-  //   // },
-  // ];
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.leftWrapper}>
-        <Header />
-        <div className={styles.tabs}>
-          {/* <TabNavigation tabOptions={tabOptions} activeTab={activeTab} /> */}
-          <Link to="/payment-success">Payment success</Link>
-          <Link to="/order-tracking">Order Tracking</Link>
-          <Link to="/order-tracking-form">Order tracking form</Link>
+        <div>
+          <Header isCouponBlock={activeTab !== 1} />
+          {activeTab === 1 && (
+            <>
+              <div className={styles.tabs}>
+                <TabNavigation />
+              </div>
+              <PlatformSelector />
+              <DiscountBundle />
+              <WeaponType />
+            </>
+          )}
+          {(activeTab === 2 || activeTab === 3) && (
+            <>
+              <div className={styles.tabs}>
+                <TabNavigation />
+              </div>
+              <OrderInformation />
+              <BillingDetails />
+            </>
+          )}
         </div>
+        <p className={`${styles.desktop} ${styles.text}`}>Copyright © 2024 NergetixPay</p>
       </div>
       <div className={styles.rightWrapper}>
-        <button onClick={handleSetBrand}>Set Brand Data</button>
-      </div>
-      <div>
-        <h1>id: {brand?.id}</h1>
-        <h1>description: {brand?.description}</h1>
-        <h1>name: {brand?.name}</h1>
+        <OrderSummary />
+        {(activeTab === 2 || activeTab === 3) && <PaymentMethods />}
+        <div className={styles.buttonWrapper}>
+          {activeTab === 1 && (
+            <Button onClick={handleSetActiveTab}>Place Order</Button>
+          )}
+          {(activeTab === 2 || activeTab === 3) && (
+            <Button onClick={handleSetActiveTab}>Pay</Button>
+          )}
+        </div>
+        <p className={styles.text}>
+          Your personal data will be used to process your order, support your
+          experience throughout this website, and for other purposes described
+          in our privacy policy.
+        </p>
+        <p className={`${styles.mobile} ${styles.text}`}>Copyright © 2024 NergetixPay</p>
       </div>
     </div>
   );

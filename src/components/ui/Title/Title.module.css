@@ -1,0 +1,18 @@
+.title {
+  display: flex;
+  margin-bottom: 24px;
+  font-weight: bold;
+}
+
+.required {
+  color: #ff3b30;
+  margin-left: 4px;
+  margin-top: 2px;
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  .title {
+    margin-bottom: 15px;
+  }
+}

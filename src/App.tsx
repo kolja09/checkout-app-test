@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import {
   CheckoutOrders,
@@ -6,7 +7,6 @@ import {
   OrderTrackingForm,
   PaymentSuccess,
 } from "./pages";
-import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import styles from "./App.module.css";
 
@@ -24,7 +24,7 @@ const App = () => {
           <Route
             path="/"
             element={<Navigate to="/checkout-orders" replace />}
-          />{" "}
+          />
           <Route path="/checkout-orders" element={<CheckoutOrders />} />
           <Route path="/payment-success" element={<PaymentSuccess />} />
           <Route path="/order-tracking-form" element={<OrderTrackingForm />} />

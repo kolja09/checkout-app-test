@@ -3,6 +3,10 @@
 }
 
 .leftWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   width: 50%;
   padding: 48px;
 }
@@ -14,4 +18,67 @@
 
 .tabs {
   padding: 48px 0;
+}
+
+.text {
+  color: #acacac;
+}
+
+.buttonWrapper {
+  margin-bottom: 23px;
+}
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .leftWrapper {
+    padding: 24px 10px 24px 20px;
+  }
+
+  .rightWrapper {
+    padding: 24px 20px 24px 10px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .rightWrapper,
+  .leftWrapper {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .tabs {
+    padding: 0px 0 25px;
+  }
+
+  .mobile {
+    display: block;
+    margin-top: 25px;
+  }
+  .desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .rightWrapper,
+  .leftWrapper {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .rightWrapper {
+    padding: 0px 20px 20px;
+  }
+  .leftWrapper {
+    padding: 20px 20px 0px 20px;
+  }
 }

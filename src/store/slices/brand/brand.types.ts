@@ -1,9 +1,6 @@
 export type CategoriesStateType = {
   brand: TBrandData | null;
+  activeTab: number;
 };
 
-export type TBrandData = {
-  id: number;
-  name: string;
-  description: string;
-};
+export type TBrandData = null;

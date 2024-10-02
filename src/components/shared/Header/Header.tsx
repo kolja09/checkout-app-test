@@ -5,7 +5,11 @@ import { CouponIcon } from "@/components/ui/Icons/CouponIcon";
 import defaultLogo from "@/assets/defaultLogo.svg";
 import goBack from "@/assets/goBack.svg";
 
-export const Header = () => {
+export const Header = ({
+  isCouponBlock = false,
+}: {
+  isCouponBlock?: boolean;
+}) => {
   return (
     <div className={styles.header}>
       <div className={styles.logoSection}>
@@ -16,13 +20,18 @@ export const Header = () => {
         </div>
       </div>
 
-      <div className={styles.couponSection}>
-        <CouponIcon />
-        <span className={styles.text}>Have a coupon?</span>
-        <span className={styles.textForAction}>
-          Click here to enter your code
-        </span>
-      </div>
+      {isCouponBlock && (
+        <div className={styles.couponSection}>
+          <div className={styles.couponWrapper}>
+            <CouponIcon />
+            <span className={styles.text}>Have a coupon?</span>
+          </div>
+
+          <span className={styles.textForAction}>
+            Click here to enter your code
+          </span>
+        </div>
+      )}
     </div>
   );
 };
